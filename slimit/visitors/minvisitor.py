@@ -346,9 +346,9 @@ class ECMAMinifier(object):
         if ident is None:
             ident = ''
         else:
-            ident = self.visit(ident)
+            ident = ' %s' % self.visit(ident)
 
-        header = 'function %s(%s)'
+        header = 'function%s(%s)'
         if getattr(node, '_parens', False):
             header = '(' + header
         s = (header + '{%s') % (
