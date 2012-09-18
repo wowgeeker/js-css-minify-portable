@@ -27,3 +27,27 @@ Python &gt;= 2.4
 
     js_content = urllib.urlopen('http://code.jquery.com/jquery-1.8.1.js').read()
     print jsminify(js_content, mangle=True, mangle_toplevel=False)
+
+#### Benchmark
+    $ls ./jquery*
+    #raw
+    256K jquery-1.8.1.js
+    #download from jquery.com
+     92K jquery-1.8.1.min.js
+     36K jquery-1.8.1.min.js.gz
+    #http://closure-compiler.appspot.com
+     84K jquery-1.8.1.google.advanced.js
+     32K jquery-1.8.1.google.advanced.js.gz
+     92K jquery-1.8.1.google.simple.js
+     36K jquery-1.8.1.google.simple.js.gz
+    #http://dean.edwards.name/packer
+    120K jquery-1.8.1.packer.js
+     40K jquery-1.8.1.packer.js.gz
+    #http://refresh-sf.com/yui
+    #Uncaught SyntaxError: Unexpected token } 
+     64K jquery-1.8.1.yui.js
+     24K jquery-1.8.1.yui.js.gz
+    #slimit
+     96K jquery-1.8.1.slimit.js
+     36K jquery-1.8.1.slimit.js.gz
+
